@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ILSpyReference Include="ILSpy" />
+    <ILSpyReference Include="ICSharpCode.ILSpyX" />
+    <ILSpyReference Include="ICsharpCode.Decompiler" />
+    <ILSpyReference Include="ICsharpCode.TreeView" />
+    <ILSpyReference Include="System.ComponentModel.Composition" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="@(ILSpyReference)" Private="false" Publish="false">
+      <HintPath>$(LocalAppData)\Programs\ILSpy\%(Identity).dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
